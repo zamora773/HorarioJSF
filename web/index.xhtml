@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Envio de Datos</title>
+    </h:head>
+    <h:body>
+        <h2>Formulario de Estudiante</h2>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="txtAsignatura" value="Asignatura" />
+                <h:inputText id="txtAsignatura" label="Ingrese la Asignatura" required="true" value="#{profesorBean.asignatura}" />
+                <h:message for="txtAsignatura"/>
+
+                <h:outputLabel for="chkDocentes" value="Docentes" />
+                <h:selectManyCheckbox id="chkDocentes" label="chkDocentes" value="#{profesorBean.docentes}">
+                    <f:selectItem itemLabel="Martinez Garcia Enrique Augusto" itemValue="Martinez Garcia Enrique Augusto" />
+                    <f:selectItem itemLabel="Otto Rodriguez Gonzalez Mendoza" itemValue="Otto Rodriguez Gonzalez Mendoza" />
+                    <f:selectItem itemLabel="Trujillo Coloma Maria Jose" itemValue="Trujillo Coloma Maria Jose" />
+                    <f:selectItem itemLabel="Litardo Unda Julio Giovanni" itemValue="Litardo Unda Julio Giovanni" />
+                    <f:selectItem itemLabel="Toapanta Bernabe Mariuxi Del Carmen" itemValue="Toapanta Bernabe Mariuxi Del Carmen" />
+                    <f:selectItem itemLabel="Alcivar Aray Cesar Andres" itemValue="Alcivar Aray Cesar Andres" />
+                    <f:selectItem itemLabel="Zapata Vega Sandra Marcela" itemValue="Zapata Vega Sandra Marcela" />
+                </h:selectManyCheckbox> 
+                <h:message for="chkDocentes" />
+
+                <h:outputLabel for="radioCarrera" value="Carrera"/>
+                <h:selectOneRadio id="radioCarrera" value="#{profesorBean.carrera}">
+                    <f:selectItem itemLabel="Ing. en Sistemas de Información " itemValue="I" />
+                    <f:selectItem itemLabel="Lic. en Sistemas de Información" itemValue="L" />
+                </h:selectOneRadio>
+                <h:message for="radioSexo"/>            
+
+                <h:outputLabel for="cmb" value="Ciclo" />
+                <h:selectOneMenu id="cmbCiclo" label="Ciclo" value="#{profesorBean.ciclo}">
+                    <f:selectItem itemLabel="1er Semestre" itemValue="1er Semestre" />
+                    <f:selectItem itemLabel="2do Semestre" itemValue="2do Semestre" />
+                    <f:selectItem itemLabel="3da Semestre" itemValue="3da Semestre" />
+                    <f:selectItem itemLabel="4to Semestre" itemValue="4to Semestre" />
+                    <f:selectItem itemLabel="5to Semestre" itemValue="5to Semestre" />
+                    <f:selectItem itemLabel="6to Semestre" itemValue="6to Semestre" />
+                    <f:selectItem itemLabel="7to Semestre" itemValue="7to Semestre" />
+                    <f:selectItem itemLabel="8vo Semestre" itemValue="8vo Semestre" />                  
+                </h:selectOneMenu>                    
+                <h:message for="cmbCiclo" />
+
+                <h:commandButton action="recibir" value="Enviar Datos" />
+            </h:panelGrid>           
+        </h:form>       
+    </h:body>
+</html>
+
